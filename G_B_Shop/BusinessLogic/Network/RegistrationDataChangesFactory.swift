@@ -8,7 +8,8 @@
 import Foundation
 import Alamofire
 protocol RegistrationAndDataChangesFactory {
-    func registration(idUser: Int, userName: String, password: String, userEmail: String, userGender: String, userCreditCardNumber: String, userBio: String, completionHandler: @escaping (AFDataResponse<RegistrationUserResult>) -> Void)
-    func dataChange(idUser: Int, userName: String, password: String, userEmail: String, userGender: String, userCreditCardNumber: String, userBio: String, completionHandler: @escaping (AFDataResponse<ChangeUserDataResult>) -> Void)
+    func registration(userId: Int, userLogin: String, userPassword: String, userName: String, userLastname: String, userEmail: String, userCreditCard: String, userBio: String, completionHandler: @escaping (AFDataResponse<DefaultResult>) -> Void)
+    func dataChange(userId: Int, userLogin: String, userPassword: String, userName: String, userLastname: String, userEmail: String, userCreditCard: String, userBio: String, completionHandler: @escaping (AFDataResponse<DefaultResult>) -> Void)
 }
+
 

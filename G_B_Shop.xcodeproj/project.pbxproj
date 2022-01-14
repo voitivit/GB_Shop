@@ -23,15 +23,17 @@
 		F7C6764E279181D20082ABF7 /* Auth.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7C6764D279181D20082ABF7 /* Auth.swift */; };
 		F7C67650279181DF0082ABF7 /* RegistrationAndChanges.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7C6764F279181DF0082ABF7 /* RegistrationAndChanges.swift */; };
 		F7C67654279182A60082ABF7 /* ResultLogin.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7C67653279182A60082ABF7 /* ResultLogin.swift */; };
-		F7C67656279182B10082ABF7 /* LogoutResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7C67655279182B10082ABF7 /* LogoutResult.swift */; };
+		F7C67656279182B10082ABF7 /* DefaultResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7C67655279182B10082ABF7 /* DefaultResult.swift */; };
 		F7C67658279182BC0082ABF7 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7C67657279182BC0082ABF7 /* User.swift */; };
-		F7C6765A279182CE0082ABF7 /* RegistrationUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7C67659279182CE0082ABF7 /* RegistrationUser.swift */; };
-		F7C6765C279182DA0082ABF7 /* ChangeUserDataResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7C6765B279182DA0082ABF7 /* ChangeUserDataResult.swift */; };
 		F7C67661279183A70082ABF7 /* AbstractErrorParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7C67660279183A70082ABF7 /* AbstractErrorParser.swift */; };
 		F7C67663279183B40082ABF7 /* ErrorParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7C67662279183B40082ABF7 /* ErrorParser.swift */; };
 		F7C67665279183BF0082ABF7 /* ResponseCodable.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7C67664279183BF0082ABF7 /* ResponseCodable.swift */; };
 		F7C67667279183CB0082ABF7 /* AbstractRequestFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7C67666279183CB0082ABF7 /* AbstractRequestFactory.swift */; };
 		F7C67669279183D80082ABF7 /* RequestRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7C67668279183D80082ABF7 /* RequestRouter.swift */; };
+		F7C6766D27918F510082ABF7 /* ProductsRequestFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7C6766C27918F510082ABF7 /* ProductsRequestFactory.swift */; };
+		F7C6766F27918F770082ABF7 /* RequestProducts.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7C6766E27918F760082ABF7 /* RequestProducts.swift */; };
+		F7C676712791900A0082ABF7 /* ProductList.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7C676702791900A0082ABF7 /* ProductList.swift */; };
+		F7C676732791902D0082ABF7 /* Product.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7C676722791902D0082ABF7 /* Product.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -71,15 +73,17 @@
 		F7C6764D279181D20082ABF7 /* Auth.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Auth.swift; sourceTree = "<group>"; };
 		F7C6764F279181DF0082ABF7 /* RegistrationAndChanges.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationAndChanges.swift; sourceTree = "<group>"; };
 		F7C67653279182A60082ABF7 /* ResultLogin.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultLogin.swift; sourceTree = "<group>"; };
-		F7C67655279182B10082ABF7 /* LogoutResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogoutResult.swift; sourceTree = "<group>"; };
+		F7C67655279182B10082ABF7 /* DefaultResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultResult.swift; sourceTree = "<group>"; };
 		F7C67657279182BC0082ABF7 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
-		F7C67659279182CE0082ABF7 /* RegistrationUser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationUser.swift; sourceTree = "<group>"; };
-		F7C6765B279182DA0082ABF7 /* ChangeUserDataResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangeUserDataResult.swift; sourceTree = "<group>"; };
 		F7C67660279183A70082ABF7 /* AbstractErrorParser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AbstractErrorParser.swift; sourceTree = "<group>"; };
 		F7C67662279183B40082ABF7 /* ErrorParser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorParser.swift; sourceTree = "<group>"; };
 		F7C67664279183BF0082ABF7 /* ResponseCodable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResponseCodable.swift; sourceTree = "<group>"; };
 		F7C67666279183CB0082ABF7 /* AbstractRequestFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AbstractRequestFactory.swift; sourceTree = "<group>"; };
 		F7C67668279183D80082ABF7 /* RequestRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestRouter.swift; sourceTree = "<group>"; };
+		F7C6766C27918F510082ABF7 /* ProductsRequestFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductsRequestFactory.swift; sourceTree = "<group>"; };
+		F7C6766E27918F760082ABF7 /* RequestProducts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestProducts.swift; sourceTree = "<group>"; };
+		F7C676702791900A0082ABF7 /* ProductList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductList.swift; sourceTree = "<group>"; };
+		F7C676722791902D0082ABF7 /* Product.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Product.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -168,6 +172,8 @@
 				F7C6764B279181BD0082ABF7 /* RequestFactory.swift */,
 				F7C6764D279181D20082ABF7 /* Auth.swift */,
 				F7C6764F279181DF0082ABF7 /* RegistrationAndChanges.swift */,
+				F7C6766C27918F510082ABF7 /* ProductsRequestFactory.swift */,
+				F7C6766E27918F760082ABF7 /* RequestProducts.swift */,
 			);
 			path = Network;
 			sourceTree = "<group>";
@@ -184,10 +190,10 @@
 			isa = PBXGroup;
 			children = (
 				F7C67653279182A60082ABF7 /* ResultLogin.swift */,
-				F7C67655279182B10082ABF7 /* LogoutResult.swift */,
 				F7C67657279182BC0082ABF7 /* User.swift */,
-				F7C67659279182CE0082ABF7 /* RegistrationUser.swift */,
-				F7C6765B279182DA0082ABF7 /* ChangeUserDataResult.swift */,
+				F7C67655279182B10082ABF7 /* DefaultResult.swift */,
+				F7C676702791900A0082ABF7 /* ProductList.swift */,
+				F7C676722791902D0082ABF7 /* Product.swift */,
 			);
 			path = Entity;
 			sourceTree = "<group>";
@@ -368,9 +374,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				F7C6764C279181BD0082ABF7 /* RequestFactory.swift in Sources */,
+				F7C6766F27918F770082ABF7 /* RequestProducts.swift in Sources */,
 				F732D8A62783218900CA262A /* ViewController.swift in Sources */,
 				F7C67667279183CB0082ABF7 /* AbstractRequestFactory.swift in Sources */,
-				F7C6765C279182DA0082ABF7 /* ChangeUserDataResult.swift in Sources */,
+				F7C6766D27918F510082ABF7 /* ProductsRequestFactory.swift in Sources */,
 				F7C67661279183A70082ABF7 /* AbstractErrorParser.swift in Sources */,
 				F7C6764A279181A00082ABF7 /* RegistrationDataChangesFactory.swift in Sources */,
 				F732D8A22783218900CA262A /* AppDelegate.swift in Sources */,
@@ -379,11 +386,12 @@
 				F7C6764E279181D20082ABF7 /* Auth.swift in Sources */,
 				F7C67648279181900082ABF7 /* AuthRequestFactory.swift in Sources */,
 				F7C67665279183BF0082ABF7 /* ResponseCodable.swift in Sources */,
-				F7C6765A279182CE0082ABF7 /* RegistrationUser.swift in Sources */,
 				F7C67663279183B40082ABF7 /* ErrorParser.swift in Sources */,
 				F7C67650279181DF0082ABF7 /* RegistrationAndChanges.swift in Sources */,
-				F7C67656279182B10082ABF7 /* LogoutResult.swift in Sources */,
+				F7C67656279182B10082ABF7 /* DefaultResult.swift in Sources */,
 				F732D8A42783218900CA262A /* SceneDelegate.swift in Sources */,
+				F7C676732791902D0082ABF7 /* Product.swift in Sources */,
+				F7C676712791900A0082ABF7 /* ProductList.swift in Sources */,
 				F7C67658279182BC0082ABF7 /* User.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

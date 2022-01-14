@@ -11,7 +11,7 @@ class Auth: AbstractRequestFactory {
     let errorParser: AbstractErrorParser
     let sessionManager: Session
     let queue: DispatchQueue
-    let baseUrl = URL(string: "https://raw.githubusercontent.com/GeekBrainsTutorial/online-store-api/master/responses/")!
+    let baseUrl = URL(string: "https://intense-retreat-87800.herokuapp.com/")!
     
     init (errorParser: AbstractErrorParser, sessionManager: Session, queue: DispatchQueue = DispatchQueue.global(qos: .utility)) {
         self.errorParser = errorParser
@@ -21,13 +21,13 @@ class Auth: AbstractRequestFactory {
 }
 
 extension Auth: AuthRequestFactory {
-    func login(userName: String, password: String, completionHandler: @escaping (AFDataResponse<LoginResult>) -> Void) {
-        let requestModel = Login(baseUrl: baseUrl, login: userName, password: password)
+    func login(userLogin: String, userPassword: String, completionHandler: @escaping (AFDataResponse<LoginResult>) -> Void) {
+        let requestModel = Login(baseUrl: baseUrl, login: userLogin, password: userPassword)
         self.request(request: requestModel, completionHandler: completionHandler)
     }
     
-    func logout(idUser: Int, completionHandler: @escaping (AFDataResponse<LogoutResult>) -> Void) {
-        let requestModel = Logout(baseUrl: baseUrl, idUser: idUser)
+    func logout(userLogin: String, userPassword: String, completionHandler: @escaping (AFDataResponse<DefaultResult>) -> Void) {
+        let requestModel = Logout(baseUrl: baseUrl, login: userLogin, password: userPassword)
         self.request(request: requestModel, completionHandler: completionHandler)
     }
 }
@@ -35,15 +35,15 @@ extension Auth: AuthRequestFactory {
 extension Auth {
     struct Login: RequestRouter {
         let baseUrl: URL
-        let method: HTTPMethod = .get
-        let path: String = "login.json"
+        let method: HTTPMethod = .post
+        let path: String = "login"
         
         let login: String
         let password: String
         var parameters: Parameters? {
             return [
-                "username": login,
-                "password": password
+                "userLogin": login,
+                "userPassword": password
             ]
         }
     }
@@ -52,13 +52,15 @@ extension Auth {
 extension Auth {
     struct Logout: RequestRouter {
         var baseUrl: URL
-        var method: HTTPMethod = .get
-        var path: String = "logout.json"
+        var method: HTTPMethod = .post
+        var path: String = "logout"
         
-        let idUser: Int
+        let login: String
+        let password: String
         var parameters: Parameters? {
             return [
-                "id_user": idUser
+                "userLogin": login,
+                "userPassword": password
             ]
         }
     }
