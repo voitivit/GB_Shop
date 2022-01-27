@@ -33,4 +33,19 @@ class RequestFactory {
         let errorParser = makeErrorParser()
         return RegistrationAndChanges(errorParser: errorParser, sessionManager: commonSession, queue: sessionQueue)
     }
+    
+    func makeProductsFactory() -> ProductsRequestFactory {
+        let errorParser = makeErrorParser()
+        return ProductsRequests(errorParser: errorParser, sessionManager: commonSession, queue: sessionQueue)
+    }
+    
+    func makeProductsReviewsFactory() -> ProductsReviewsRequestFactory {
+        let errorParser = makeErrorParser()
+        return ProductsReviewsRequests(errorParser: errorParser, sessionManager: commonSession, queue: sessionQueue)
+    }
+    
+    func makeCartRequestsFactory() -> CartRequestsFactory {
+        let errorParser = makeErrorParser()
+        return CartRequests(errorParser: errorParser, sessionManager: commonSession, queue: sessionQueue)
+    }
 }

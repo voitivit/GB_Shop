@@ -28,3 +28,4 @@ extension AbstractRequestFactory {
             .responseCodable(errorParser: errorParser, queue: queue, completionHandler: completionHandler)
     }
 }
+
