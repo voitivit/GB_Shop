@@ -1,12 +1,14 @@
 //
-//  RequestProducts.swift
+//  ProductsRequests.swift
 //  G_B_Shop
 //
-//  Created by emil kurbanov on 14.01.2022.
+//  Created by emil kurbanov on 27.01.2022.
 //
 
 import Foundation
 import Alamofire
+
+
 class ProductsRequests: AbstractRequestFactory {
     let errorParser: AbstractErrorParser
     let sessionManager: Session
@@ -65,4 +67,3 @@ extension ProductsRequests {
         }
     }
 }
-
