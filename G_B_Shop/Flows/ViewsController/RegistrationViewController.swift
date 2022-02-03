@@ -14,17 +14,14 @@ class RegistrationViewController: UIViewController {
     
     let requestFactory = RequestFactory()
     
-    
     //MARK: -- Constraints settings
     private func setupConstraints() {
         self.scrollView.addSubview(registrationStackView)
         self.registrationStackView.translatesAutoresizingMaskIntoConstraints = false
-        
         self.registrationStackView.leadingAnchor.constraint(equalTo: self.scrollView.leadingAnchor).isActive = true
         self.registrationStackView.trailingAnchor.constraint(equalTo: self.scrollView.trailingAnchor).isActive = true
         self.registrationStackView.topAnchor.constraint(equalTo: self.scrollView.topAnchor).isActive = true
         self.registrationStackView.bottomAnchor.constraint(equalTo: self.scrollView.bottomAnchor).isActive = true
-        
         self.registrationStackView.widthAnchor.constraint(equalTo: self.view.widthAnchor).isActive = true
     }
     
@@ -107,7 +104,6 @@ class RegistrationViewController: UIViewController {
     
     //MARK: -- Transfer functions
     private func transferToMainScreen() {
-        
         let mainViewController = self.storyboard?.instantiateViewController(withIdentifier: "MainScreenViewController") as! MainScreenViewController
         navigationController?.pushViewController(mainViewController, animated: true)
         
@@ -121,7 +117,6 @@ class RegistrationViewController: UIViewController {
     }
     
     //MARK: -- Clear screen
-    
     private func clearScreen() {
         self.registrationStackView.userIdTextField.text = ""
         self.registrationStackView.userLoginTextField.text = ""
@@ -159,7 +154,6 @@ class RegistrationViewController: UIViewController {
                     case .success(let success): success.result == 1 ? self.transferToMainScreen() : self.showError("Authorisation error")
                     case .failure(let error): self.showError(error.localizedDescription)
                     }
-                    
                     logging(Logger.funcEnd)
                 }
             }
@@ -178,6 +172,5 @@ class RegistrationViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
     }
 }

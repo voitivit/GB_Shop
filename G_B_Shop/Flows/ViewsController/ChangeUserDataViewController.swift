@@ -18,12 +18,10 @@ class ChangeUserDataViewController: UIViewController {
     private func setupConstraints() {
         self.scrollView.addSubview(changeDataStackView)
         self.changeDataStackView.translatesAutoresizingMaskIntoConstraints = false
-        
         self.changeDataStackView.leadingAnchor.constraint(equalTo: self.scrollView.leadingAnchor).isActive = true
         self.changeDataStackView.trailingAnchor.constraint(equalTo: self.scrollView.trailingAnchor).isActive = true
         self.changeDataStackView.topAnchor.constraint(equalTo: self.scrollView.topAnchor).isActive = true
         self.changeDataStackView.bottomAnchor.constraint(equalTo: self.scrollView.bottomAnchor).isActive = true
-        
         self.changeDataStackView.widthAnchor.constraint(equalTo: self.view.widthAnchor).isActive = true
     }
     
@@ -106,7 +104,6 @@ class ChangeUserDataViewController: UIViewController {
     
     //MARK: -- Transfer functions
     private func transferToMainScreen() {
-        
         let mainViewController = self.storyboard?.instantiateViewController(withIdentifier: "MainScreenViewController") as! MainScreenViewController
         navigationController?.pushViewController(mainViewController, animated: true)
         
@@ -120,7 +117,6 @@ class ChangeUserDataViewController: UIViewController {
     }
     
     //MARK: -- Clear screen
-    
     private func clearScreen() {
         self.changeDataStackView.userIdTextField.text = ""
         self.changeDataStackView.userLoginTextField.text = ""
@@ -158,7 +154,6 @@ class ChangeUserDataViewController: UIViewController {
                 case .failure(let error):
                     self.showError(error.localizedDescription)
                 }
-                
                 logging(Logger.funcEnd)
             }
         }
@@ -184,7 +179,7 @@ class ChangeUserDataViewController: UIViewController {
                     logging(response)
                     
                     switch response.result {
-                    case .success(let success): success.result == 1 ? self.transferToMainScreen() : self.showError("Authorisation error")
+                    case .success(let success): success.result == 1 ? self.transferToMainScreen() : self.showError("Request error")
                     case .failure(let error): self.showError(error.localizedDescription)
                     }
                     
@@ -209,4 +204,3 @@ class ChangeUserDataViewController: UIViewController {
         super.viewDidLoad()
     }
 }
-

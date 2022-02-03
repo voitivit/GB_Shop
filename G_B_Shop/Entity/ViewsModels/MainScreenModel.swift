@@ -9,4 +9,5 @@ struct MainScreenModel {
     let wellcomeLabel: String = "Привет!"
     let changeDataButtonLabel: String = "Изменение данных пользователя"
     let logoutButtonLabel: String = "Выйти"
+    let productsListButtonLabel: String = "Products List"
 }

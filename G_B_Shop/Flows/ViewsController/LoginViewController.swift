@@ -126,7 +126,6 @@ class LoginViewController: UIViewController {
                     case .success(let success): success.result == 1 ? self.transferToMainScreen() : self.showError("Authorisation error")
                     case .failure(let error): self.showError(error.localizedDescription)
                     }
-                    
                     logging(Logger.funcEnd)
                 }
             }
@@ -151,7 +150,5 @@ class LoginViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
     }
 }
-

@@ -13,20 +13,16 @@ class MainScreenViewController: UIViewController {
     @IBOutlet weak var mainScreenStackView: MainScreenStackView!
     
     let requestFactory = RequestFactory()
-    
     var authUser = AuthUser(userLogin: "", userPassword: "")
-    
     
     //MARK: -- Constraints settings
     private func setupConstraints() {
         self.scrollView.addSubview(mainScreenStackView)
         self.mainScreenStackView.translatesAutoresizingMaskIntoConstraints = false
-        
         self.mainScreenStackView.leadingAnchor.constraint(equalTo: self.scrollView.leadingAnchor).isActive = true
         self.mainScreenStackView.trailingAnchor.constraint(equalTo: self.scrollView.trailingAnchor).isActive = true
         self.mainScreenStackView.topAnchor.constraint(equalTo: self.scrollView.topAnchor).isActive = true
         self.mainScreenStackView.bottomAnchor.constraint(equalTo: self.scrollView.bottomAnchor).isActive = true
-        
         self.mainScreenStackView.widthAnchor.constraint(equalTo: self.view.widthAnchor).isActive = true
     }
     
@@ -34,12 +30,10 @@ class MainScreenViewController: UIViewController {
     private func loadingUserData() {
         let factory = requestFactory.makeGetRequestsFactory()
         let getUserData = GetUserData(request: "get")
-        
         factory.getUserData(request: getUserData.request) { response in
             DispatchQueue.main.async {
                 logging(Logger.funcStart)
                 logging(response)
-                
                 switch response.result {
                 case .success(let success):
                     self.authUser.userLogin = success.userLogin
@@ -47,7 +41,6 @@ class MainScreenViewController: UIViewController {
                 case .failure(let error):
                     self.showError(error.localizedDescription)
                 }
-                
                 logging(Logger.funcEnd)
             }
         }
@@ -72,33 +65,34 @@ class MainScreenViewController: UIViewController {
     }
     
     @IBAction func logoutButtonTapped(_ sender: Any) {
-        
         let factory = requestFactory.makeAuthRequestFactory()
-        
         factory.logout(userLogin: self.authUser.userLogin, userPassword: self.authUser.userPassword) { response in
             DispatchQueue.main.async {
                 logging(Logger.funcStart)
                 logging(response)
-                
                 switch response.result {
                 case .success(let success): success.result == 1 ? self.logoutTransfer() : self.showError("Logout error")
                 case .failure(let error): self.showError(error.localizedDescription)
                 }
-                
                 logging(Logger.funcEnd)
             }
         }
     }
-
     
+    @IBAction func productListButtonTapped(_ sender: Any) {
+        let productListTableViewController = self.storyboard?.instantiateViewController(withIdentifier: "ProductListTableViewController") as! ProductListTableViewController
+        navigationController?.pushViewController(productListTableViewController, animated: true)
+    }
+    
+    //MARK: -- Controller functions
     override func viewWillAppear(_ animated: Bool) {
         mainScreenStackView.configureView()
         setupConstraints()
         loadingUserData()
+        self.navigationItem.hidesBackButton = true
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
     }
 }
-
