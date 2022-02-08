@@ -17,7 +17,6 @@ struct RegistrationAndChangesViewModel {
     let userCreditCardLabel: String = "User Credit Card Number:"
     let userBioLabel: String = "User Bio:"
     let registrationButtonLabel: String = "Registration"
-    
     let userIdTextPlaceholder: String = "Input User ID (numbers only)"
     let userLoginTextPlaceholder: String = "Input User Login"
     let userPasswordTextPlaceholder: String = "Input User Password"

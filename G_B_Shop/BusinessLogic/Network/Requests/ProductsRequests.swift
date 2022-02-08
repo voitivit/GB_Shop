@@ -39,10 +39,8 @@ extension ProductsRequests {
         let baseUrl: URL
         let method: HTTPMethod = .post
         let path: String = "productList"
-        
         let pageNumber: Int
         let categoryId: Int
-        
         var parameters: Parameters? {
             return [
                 "pageNumber": pageNumber,
@@ -57,9 +55,7 @@ extension ProductsRequests {
         let baseUrl: URL
         let method: HTTPMethod = .post
         let path: String = "product"
-        
         let productId: Int
-        
         var parameters: Parameters? {
             return [
                 "productId": productId

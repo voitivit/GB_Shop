@@ -33,7 +33,6 @@ extension GetRequests {
         let baseUrl: URL
         let method: HTTPMethod = .post
         let path: String = "getUserData"
-        
         let request: String
         var parameters: Parameters? {
             return [

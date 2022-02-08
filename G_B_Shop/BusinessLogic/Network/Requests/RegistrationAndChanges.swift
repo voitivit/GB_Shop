@@ -39,7 +39,6 @@ extension RegistrationAndChanges {
         let baseUrl: URL
         let method: HTTPMethod = .post
         let path: String = "registration"
-        
         let userId: Int
         let userLogin: String
         let userPassword: String

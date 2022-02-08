@@ -45,9 +45,7 @@ extension ProductsReviewsRequests {
         let baseUrl: URL
         let method: HTTPMethod = .post
         let path: String = "productReviewsList"
-        
         let productId: Int
-        
         var parameters: Parameters? {
             return [
                 "productId": productId
@@ -61,12 +59,10 @@ extension ProductsReviewsRequests {
         let baseUrl: URL
         let method: HTTPMethod = .post
         let path: String = "productReviewAdd"
-        
         let productId: Int
         let userName: String
         let productRating: Int
         let userReview: String
-        
         var parameters: Parameters? {
             return [
                 "productId": productId,
@@ -83,11 +79,9 @@ extension ProductsReviewsRequests {
         let baseUrl: URL
         let method: HTTPMethod = .post
         let path: String = "productReviewCancel"
-        
         let productId: Int
         let userName: String
         let reviewId: Int
-        
         var parameters: Parameters? {
             return [
                 "productId": productId,

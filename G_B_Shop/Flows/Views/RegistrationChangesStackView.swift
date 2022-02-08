@@ -17,7 +17,7 @@ class RegistrationChangesStackView: UIStackView {
     @IBOutlet weak var userEmailLabel: UILabel!
     @IBOutlet weak var userCreditCardLabel: UILabel!
     @IBOutlet weak var userBioLabel: UILabel!
-    
+
     @IBOutlet weak var userIdTextField: UITextField!
     @IBOutlet weak var userLoginTextField: UITextField!
     @IBOutlet weak var userPasswordTextField: UITextField!

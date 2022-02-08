@@ -126,7 +126,6 @@ class RegistrationViewController: UIViewController {
         self.registrationStackView.userEmailTextField.text = ""
         self.registrationStackView.userCreditCardTextField.text = ""
         self.registrationStackView.userBioTextField.text = ""
-        
         self.registrationStackView.registrationButton.backgroundColor = UIColor.opaqueSeparator
         self.registrationStackView.registrationButton.isEnabled = false
     }
