@@ -18,17 +18,21 @@ class LoginViewController: UIViewController {
     private func setupConstraints() {
         self.scrollView.addSubview(loginStackView)
         self.loginStackView.translatesAutoresizingMaskIntoConstraints = false
+        
         self.loginStackView.leadingAnchor.constraint(equalTo: self.scrollView.leadingAnchor).isActive = true
         self.loginStackView.trailingAnchor.constraint(equalTo: self.scrollView.trailingAnchor).isActive = true
         self.loginStackView.topAnchor.constraint(equalTo: self.scrollView.topAnchor).isActive = true
         self.loginStackView.bottomAnchor.constraint(equalTo: self.scrollView.bottomAnchor).isActive = true
+        
         self.loginStackView.widthAnchor.constraint(equalTo: self.view.widthAnchor).isActive = true
     }
     
     //MARK: -- Controls settings
     private func setupControls() {
+
         self.loginStackView.loginButton.backgroundColor = UIColor.opaqueSeparator
         self.loginStackView.loginButton.isEnabled = false
+        
         [self.loginStackView.loginTextField, self.loginStackView.passwordTextField].forEach {
             $0.addTarget(self, action: #selector(self.editingChanged), for: .editingChanged)
         }
@@ -50,9 +54,12 @@ class LoginViewController: UIViewController {
     // MARK: -- Selectors
     @objc func keyboardWillShow(notification: NSNotification) {
         guard let userInfo = notification.userInfo else { return }
+        
         var keyboardFrame: CGRect = (userInfo[UIResponder.keyboardFrameBeginUserInfoKey] as! NSValue).cgRectValue
         var contentInset: UIEdgeInsets = self.scrollView.contentInset
+        
         keyboardFrame = self.view.convert(keyboardFrame, from: nil)
+        
         contentInset.bottom = keyboardFrame.size.height + 200
         self.scrollView.contentInset = contentInset
     }
@@ -68,6 +75,7 @@ class LoginViewController: UIViewController {
             self.loginStackView.loginButton.isEnabled = false
             return
         }
+        
         self.loginStackView.loginButton.backgroundColor = UIColor.systemCyan
         self.loginStackView.loginButton.isEnabled = true
     }
@@ -109,6 +117,7 @@ class LoginViewController: UIViewController {
         if textInputed() {
             let factory = requestFactory.makeAuthRequestFactory()
             let authUser = AuthUser(userLogin: self.loginStackView.loginTextField.text!, userPassword: self.loginStackView.passwordTextField.text!)
+            
             factory.login(userLogin: authUser.userLogin, userPassword: authUser.userPassword) { response in
                 DispatchQueue.main.async {
                     logging(Logger.funcStart)
@@ -138,6 +147,7 @@ class LoginViewController: UIViewController {
         setupConstraints()
         setupControls()
         registerNotifications()
+        self.navigationItem.hidesBackButton = true
     }
     
     override func viewDidLoad() {

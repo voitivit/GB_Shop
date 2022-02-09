@@ -144,7 +144,7 @@ class GBShopProductTests: XCTestCase {
     func testProductReviewAddRequest() {
         let errorParser = ErrorParserStub()
         let productId = 1
-        let userName = "Kevin"
+        let userName = "Peter"
         let productRating = 5
         let userReview = "Good"
         var parameters: Parameters? {

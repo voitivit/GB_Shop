@@ -12,6 +12,7 @@ class ChangeUserDataViewController: UIViewController {
     @IBOutlet weak var scrollView: UIScrollView!
     @IBOutlet weak var changeDataStackView: RegistrationChangesStackView!
     
+    
     let requestFactory = RequestFactory()
     
     //MARK: -- Constraints settings
