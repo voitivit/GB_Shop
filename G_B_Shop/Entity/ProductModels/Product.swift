@@ -6,9 +6,9 @@
 //
 
 import Foundation
-struct Product: Codable {
-    let productPrice: Int
-    let productName: String
-    let productDescription: String
-}
 
+struct Product: Codable {
+    var productPrice: Int
+    var productName: String
+    var productDescription: String
+}
