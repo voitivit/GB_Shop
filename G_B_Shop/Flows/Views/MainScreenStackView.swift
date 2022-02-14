@@ -13,6 +13,7 @@ class MainScreenStackView: UIStackView {
     @IBOutlet weak var changeDataButton: UIButton!
     @IBOutlet weak var logoutButton: UIButton!
     @IBOutlet weak var productListButton: UIButton!
+    @IBOutlet weak var cartButton: UIButton!
     
     let model = MainScreenModel()
     
@@ -22,8 +23,9 @@ class MainScreenStackView: UIStackView {
         changeDataButton.titleLabel?.text = model.changeDataButtonLabel
         logoutButton.titleLabel?.text = model.logoutButtonLabel
         productListButton.titleLabel?.text = model.productsListButtonLabel
+        cartButton.titleLabel?.text = model.cartButtonLabel
     }
-    
 }
+
 
 

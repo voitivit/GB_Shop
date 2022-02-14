@@ -7,12 +7,12 @@
 
 import Foundation
 struct RegistrationAndChangesUser: Codable {
-let userId: Int
-let userLogin: String
-let userPassword: String
-let userName: String
-let userLastname: String
-let userEmail: String
-let userCreditCard: String
-let userBio: String
+    var userId: Int
+    var userLogin: String
+    var userPassword: String
+    var userName: String
+    var userLastname: String
+    var userEmail: String
+    var userCreditCard: String
+    var userBio: String
 }

@@ -7,6 +7,7 @@
 
 import UIKit
 import SwiftUI
+
 class ProductListTableViewController: UITableViewController {
     
     let cellReuseId = "ProductListTableViewCell"
@@ -23,6 +24,7 @@ class ProductListTableViewController: UITableViewController {
     private func tableTitleConfiguration() {
         self.navigationItem.title = "Product List"
         self.navigationItem.backButtonTitle = "Back"
+        self.navigationItem.rightBarButtonItem = UIBarButtonItem(title: "To cart", style: .plain, target: self, action: #selector(self.cartButtonTapped(_ :)))
     }
     
     private func fillTheForm() {
@@ -48,6 +50,19 @@ class ProductListTableViewController: UITableViewController {
         navigationController?.pushViewController(productReviewTableViewController, animated: true)
     }
     
+    private func transferToCart() {
+        let cartViewController = self.storyboard?.instantiateViewController(withIdentifier: "CartViewController") as! CartViewController
+        navigationController?.pushViewController(cartViewController, animated: true)
+    }
+    
+    private func saveAddedItemsToCart(items: [Product]) {
+        CartSingletone.shared.cartList = items
+    }
+    
+    @objc func cartButtonTapped (_ sender: UIBarButtonItem!) {
+        transferToCart()
+    }
+    
     // MARK: - Table view data source
     override func numberOfSections(in tableView: UITableView) -> Int {
         return productList.count
@@ -64,7 +79,7 @@ class ProductListTableViewController: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 3
+        return 4
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -81,6 +96,12 @@ class ProductListTableViewController: UITableViewController {
         case 2:
             cell.textLabel?.text = "Product Description: \(self.productList[indexPath.section].productDescription)"
             return cell
+        case 3:
+            cell.backgroundColor = UIColor.lightGray
+            cell.textLabel?.font = .systemFont(ofSize: 16, weight: .bold)
+            cell.textLabel?.textAlignment = .center
+            cell.textLabel?.text = "Add to cart"
+            return cell
         default:
             return UITableViewCell()
         }
@@ -89,6 +110,9 @@ class ProductListTableViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         if indexPath.row == 0 {
             self.transferToProductReview()
+        }
+        if indexPath.row == 3 {
+            CartSingletone.shared.cartList.append(self.productList[indexPath.section])
         }
     }
     
