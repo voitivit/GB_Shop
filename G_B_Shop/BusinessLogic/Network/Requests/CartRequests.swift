@@ -48,10 +48,8 @@ extension CartRequests {
         let baseUrl: URL
         let method: HTTPMethod = .post
         let path: String = "productAddToCart"
-        
         let productId: Int
         let productQuantity: Int
-        
         var parameters: Parameters? {
             return [
                 "productId": productId,
@@ -66,10 +64,8 @@ extension CartRequests {
         let baseUrl: URL
         let method: HTTPMethod = .post
         let path: String = "productDeleteFromCart"
-        
         let productId: Int
         let productQuantity: Int
-        
         var parameters: Parameters? {
             return [
                 "productId": productId,
@@ -84,9 +80,7 @@ extension CartRequests {
         let baseUrl: URL
         let method: HTTPMethod = .post
         let path: String = "getProductsInCartList"
-        
         let userId: Int
-        
         var parameters: Parameters? {
             return [
                 "userId": userId
@@ -100,10 +94,8 @@ extension CartRequests {
         let baseUrl: URL
         let method: HTTPMethod = .post
         let path: String = "payProductsInCart"
-        
         let userId: Int
         let userCreditCard: Int
-        
         var parameters: Parameters? {
             return [
                 "userId": userId,
