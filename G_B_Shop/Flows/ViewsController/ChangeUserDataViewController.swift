@@ -6,12 +6,12 @@
 //
 
 import UIKit
+import Firebase
 
 class ChangeUserDataViewController: UIViewController {
     
     @IBOutlet weak var scrollView: UIScrollView!
     @IBOutlet weak var changeDataStackView: RegistrationChangesStackView!
-    
     
     let requestFactory = RequestFactory()
     
@@ -59,7 +59,20 @@ class ChangeUserDataViewController: UIViewController {
     
     // MARK: -- Selectors
     @objc func keyboardWillShow(notification: NSNotification) {
-        guard let userInfo = notification.userInfo else { return }
+        guard let userInfo = notification.userInfo else {
+            let userInfo = [
+                NSLocalizedDescriptionKey: NSLocalizedString("The request failed.", comment: ""),
+                NSLocalizedFailureReasonErrorKey: NSLocalizedString("The response returned a 404.", comment: ""),
+                NSLocalizedRecoverySuggestionErrorKey: NSLocalizedString("Does this page exist?", comment: ""),
+                "ProductID": "G_B_Shop",
+                "View": "ChangeUserDataView"
+            ]
+            let error = NSError.init(domain: NSCocoaErrorDomain,
+                                     code: -1001,
+                                     userInfo: userInfo)
+            Crashlytics.crashlytics().record(error: error)
+            return
+        }
         
         var keyboardFrame: CGRect = (userInfo[UIResponder.keyboardFrameBeginUserInfoKey] as! NSValue).cgRectValue
         var contentInset: UIEdgeInsets = self.scrollView.contentInset

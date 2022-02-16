@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import Firebase
 
 class MainScreenViewController: UIViewController {
     
@@ -77,11 +78,28 @@ class MainScreenViewController: UIViewController {
                 logging(Logger.funcEnd)
             }
         }
+        CartSingletone.shared.cartList.removeAll()
+        
+        Analytics.logEvent("logOut", parameters: [
+            "userLogin": authUser.userLogin as NSObject
+        ])
     }
     
     @IBAction func productListButtonTapped(_ sender: Any) {
         let productListTableViewController = self.storyboard?.instantiateViewController(withIdentifier: "ProductListTableViewController") as! ProductListTableViewController
         navigationController?.pushViewController(productListTableViewController, animated: true)
+        
+        Analytics.logEvent("transferToProductList", parameters: [
+            "userLogin": authUser.userLogin as NSObject
+        ])
+    }
+    
+    @IBAction func cartButtonTapped(_ sender: Any) {
+        let cartViewController = self.storyboard?.instantiateViewController(withIdentifier: "CartViewController") as! CartViewController
+        navigationController?.pushViewController(cartViewController, animated: true)
+        Analytics.logEvent("transferToCart", parameters: [
+            "userLogin": authUser.userLogin as NSObject
+        ])
     }
     
     //MARK: -- Controller functions
